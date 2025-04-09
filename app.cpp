@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string> // Added string header
 using namespace std;
 
 int main() {
@@ -12,7 +13,7 @@ int main() {
             cout << "1. Register\n2. Login\n3. Exit\nChoose: ";
             int choice;
             cin >> choice;
-
+            cin.ignore(); // Clear the newline character after cin >>
 
             if(choice == 1) {
                 cout << "Create username: ";
@@ -52,12 +53,13 @@ int main() {
             cout << "\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Logout\nChoose: ";
             int choice;
             cin >> choice;
+            cin.ignore(); // Clear the newline character after cin >>
 
             if(choice == 1) {
                 double amount;
                 cout << "Enter amount to deposit: $";
                 cin >> amount;
-                cin.ignore();
+                cin.ignore(); // Clear the newline character after cin >>
                 if(amount > 0) {
                     balance += amount;
                     cout << "Deposit done!\n";
@@ -69,6 +71,7 @@ int main() {
                 double amount;
                 cout << "Enter amount to withdraw: $";
                 cin >> amount;
+                cin.ignore(); // Clear the newline character after cin >>
                 if(amount > balance) {
                     cout << "Not enough money!\n";
                 } else if(amount > 0) {
